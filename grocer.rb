@@ -44,7 +44,7 @@ def apply_clearance(cart)
       attribute[:price].round(2)
     end
   end
-
+  cart
 end
 
 def checkout(cart, coupons)
