@@ -29,8 +29,6 @@ def apply_coupons(cart, coupons)
           }
       else    
         cart["#{[coupon[:item]]} W/COUPON"][:count] += 1
-    
-        end
       end
     end
   end  
