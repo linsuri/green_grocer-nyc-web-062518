@@ -2,7 +2,7 @@ def consolidate_cart(cart)
   # code here
   new_cart = {}
   cart.each do |item|
-		item_name = item.keys
+		item_name = item.keys.first
 		if new_cart[item_name] == nil
 		  new_cart[item_name] = {
 				price: item[item_name][:price],
