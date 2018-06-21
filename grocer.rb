@@ -20,8 +20,8 @@ def apply_coupons(cart, coupons)
   # code here
   coupons.each do |coupon|
     name = coupon[:item]
-    if coupon[:item] == cart[coupon[:item]] && cart[coupon[:item]][:count] >= coupon[:num]
-      cart[coupon[:item]][:count] -= coupon[:num]
+    if coupon[:item] == cart[name] && cart[name][:count] >= coupon[:num]
+      cart[name][:count] -= coupon[:num]
       if cart["#{name} W/COUPON"] == nil
         cart["#{name} W/COUPON"] = {
             price: coupon[:cost],
