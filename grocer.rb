@@ -21,8 +21,12 @@ def apply_coupons(cart, coupons)
   coupons.each do |coupon|
     if coupon[:item] == cart[coupon[:item]] && cart[coupon[:item]][:count] >= coupon[:num]
       cart[coupon[:item]][:count] = cart[coupon[:item]][:count] - coupon[:num]
-      if cart["#{cart[coupon[:item]]} W/COUPON"] == nil
-    
+      if cart["#{[coupon[:item]]} W/COUPON"] == nil
+        cart["#{[coupon[:item]} W/COUPON"] = {
+            price: coupon[:cost],
+            clearance: true,
+            count: 1
+          }
     
     cart.map do |item_name, attribute|
       if coupon[:item] == item_name && attribute[:count] >= coupon[:num]
