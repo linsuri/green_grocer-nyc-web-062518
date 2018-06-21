@@ -38,7 +38,7 @@ end
 
 def apply_clearance(cart)
   # code here
-  cart.each do |item_name, attribute|
+  cart.collect do |item_name, attribute|
     if attribute[:clearance] == true
       attribute[:price] *= 0.8
       attribute[:price].round(2)
