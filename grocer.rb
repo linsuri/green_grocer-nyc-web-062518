@@ -28,6 +28,12 @@ def apply_coupons(cart, coupons)
             clearance: true
             count: 1
           }
+        else
+          cart["#{item_name} W/COUPON"][:count] += 1
+        end
+      end
+    end
+  end  
 end
 
 def apply_clearance(cart)
