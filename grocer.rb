@@ -1,5 +1,6 @@
 def consolidate_cart(cart)
   # code here
+  new_cart = {}
   cart.each_with_object({}) do |item, new_cart|
 		item_name = item.keys.first
 		if new_cart[item_name]
