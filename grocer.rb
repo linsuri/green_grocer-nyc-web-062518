@@ -14,22 +14,15 @@ def consolidate_cart(cart)
 		end
 	end
 	new_cart
-  
-#  new_cart = {}
-#  current_item = ""
-#  cart.each do |hash|
-#    hash.each do |item, attribute_hash|
-#      if new_cart[item] == nil
-#        new_cart[item] = item
-#      end
-#      new_cart[item] = attribute_hash
-#      new_cart[item][attribute_hash][:count] += 1
-#    end  
-#  end  
 end
 
 def apply_coupons(cart, coupons)
   # code here
+  coupons.each do |coupon|
+    cart.each do |item_name, attribute|
+      if coupon[:item] == item_name && attribute[:count] >= coupon[:num]
+        
+        
 end
 
 def apply_clearance(cart)
