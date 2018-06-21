@@ -1,6 +1,7 @@
 def consolidate_cart(cart)
   # code here
-  cart.each_with_object({}) do |item, consolidated|
+  new_cart = {}
+  cart.each do |item|
 		item_name = item.keys.first
 		if consolidated[item_name]
 			consolidated[item_name][:count] += 1
