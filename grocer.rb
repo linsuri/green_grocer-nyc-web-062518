@@ -27,18 +27,9 @@ def apply_coupons(cart, coupons)
             clearance: true,
             count: 1
           }
+      else    
+        cart["#{[coupon[:item]]} W/COUPON"][:count] += 1
     
-    cart.map do |item_name, attribute|
-      if coupon[:item] == item_name && attribute[:count] >= coupon[:num]
-        cart[item_name][:count] = cart[item_name][:count] - coupon[:num]
-        if cart["#{item_name} W/COUPON"] == nil
-          cart["#{item_name} W/COUPON"] = {
-            price: coupon[:cost],
-            clearance: true,
-            count: 1
-          }
-        else
-          cart["#{item_name} W/COUPON"][:count] += 1
         end
       end
     end
