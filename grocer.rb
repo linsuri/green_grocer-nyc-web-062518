@@ -1,16 +1,17 @@
 def consolidate_cart(cart)
   # code here
   new_cart = {}
-  cart.each do |item, consolidated|
+  cart.each do |item|
 		item_name = item.keys.first
-		if consolidated[item_name]
-			consolidated[item_name][:count] += 1
-		else
-			consolidated[item_name] = {
+		if new_cart[item_name] == nil
+		  new_cart[item_name] = {
 				price: item[item_name][:price],
 				clearance: item[item_name][:clearance],
 				count: 1
 			}
+			new_cart[item_name][:count] += 1
+		else
+			new_cart[item_name][:count] += 1
 		end
 	end
   
