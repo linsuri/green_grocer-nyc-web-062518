@@ -21,7 +21,7 @@ def apply_coupons(cart, coupons)
   coupons.each do |coupon|
     if coupon[:item] == cart[coupon[:item]] && cart[coupon[:item]][:count] >= coupon[:num]
       cart[coupon[:item]][:count] = cart[coupon[:item]][:count] - coupon[:num]
-      if cart["#{item_name} W/COUPON"] == nil
+      if cart["#{cart[coupon[:item]]} W/COUPON"] == nil
     
     
     cart.map do |item_name, attribute|
