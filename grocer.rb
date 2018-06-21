@@ -19,6 +19,9 @@ end
 def apply_coupons(cart, coupons)
   # code here
   coupons.each do |coupon|
+    
+    
+    
     cart.map do |item_name, attribute|
       if coupon[:item] == item_name && attribute[:count] >= coupon[:num]
         cart[item_name][:count] = cart[item_name][:count] - coupon[:num]
