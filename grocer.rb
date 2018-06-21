@@ -25,7 +25,7 @@ def apply_coupons(cart, coupons)
       if cart["#{name} W/COUPON"] == nil
         cart["#{name} W/COUPON"] = {
             price: coupon[:cost],
-            clearance: true,
+            clearance: cart[name][:clearance],
             count: 1
           }
       else    
