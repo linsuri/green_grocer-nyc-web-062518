@@ -9,7 +9,7 @@ def consolidate_cart(cart)
 				clearance: item[item_name][:clearance],
 				count: 1
 			}
-			new_cart[item_name][:count] += 1
+			
 		else
 			new_cart[item_name][:count] += 1
 		end
